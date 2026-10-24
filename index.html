@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language Translator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <h1>Language Translator</h1>
+  <p class="sub">Type or paste text, pick two languages, and translate.</p>
+
+  <div class="bar">
+    <div class="field">
+      <span class="field-label" id="fromLabel">From</span>
+      <div class="picker" id="fromPicker"></div>
+    </div>
+
+    <button id="swap" type="button" aria-label="Swap languages">Swap</button>
+
+    <div class="field">
+      <span class="field-label" id="toLabel">To</span>
+      <div class="picker" id="toPicker"></div>
+    </div>
+  </div>
+
+  <div class="panes">
+    <section class="pane">
+      <label class="field-label" for="input">Text to translate</label>
+      <textarea id="input" maxlength="500" placeholder="Enter text here"></textarea>
+      <div class="tools">
+        <span class="count" id="count">0 / 500</span>
+        <button type="button" id="clear">Clear</button>
+      </div>
+    </section>
+
+    <section class="pane">
+      <span class="field-label" id="outLabel">Translation</span>
+      <div class="result empty" id="output" aria-live="polite" aria-labelledby="outLabel">The translation appears here.</div>
+      <div class="tools">
+        <button type="button" id="speak">Listen</button>
+        <button type="button" id="copy">Copy</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="actions">
+    <button class="primary" id="go" type="button">Translate</button>
+    <span class="status" id="status"></span>
+  </div>
+
+  <section class="history" id="historyBox" hidden>
+    <h2>Recent translations</h2>
+    <ul id="history"></ul>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
